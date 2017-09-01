@@ -60,6 +60,11 @@ export default {
       type: String,
       default: 'rgba(0, 0, 0, 0.8)'
     },
+    borderColor: String,
+    borderWidth: {
+      type: Number,
+      default: 1
+    },
     borderRadius: Number,
     disabled: Boolean
   },
@@ -92,6 +97,11 @@ export default {
       }
       if (this.borderRadius !== undefined) {
         style['border-radius'] = this.borderRadius + 'px'
+      }
+      style['border-width'] = this.borderWidth + 'px'
+      if (this.borderColor !== undefined) {
+        style['border-color'] = this.borderColor
+        style['border-style'] = 'solid'
       }
       return style
     }
@@ -142,8 +152,8 @@ export default {
     border: none;
     vertical-align: baseline;
     font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    margin: 0em 0.25em 0em 0em;
-    padding: 0.78571429em 1.5em 0.78571429em;
+    margin: 0em 0.4em 0.4em 0em;
+    padding: 0.6em 1em;
     text-transform: none;
     text-shadow: none;
     font-weight: bold;
